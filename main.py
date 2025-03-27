@@ -266,7 +266,6 @@ class CrawlerService:
 
         logger.info(
             msg=f"[LOG] create extraction stategy for type: {config.type}",
-            tag="LOG",
         )
 
         if config.type == CrawlerType.LLM:
