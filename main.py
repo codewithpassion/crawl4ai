@@ -393,7 +393,7 @@ if os.path.exists(__location__ + "/site"):
 
 site_templates = Jinja2Templates(directory=__location__ + "/site")
 
-crawler_service = CrawlerService()
+crawler_service = CrawlerService(max_concurrent_tasks=2)
 
 
 @app.on_event("startup")
