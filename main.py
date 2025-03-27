@@ -265,7 +265,7 @@ class CrawlerService:
             return None
 
         logger.info(
-            message=f"[LOG] create extraction stategy for type: {config.type}",
+            msg=f"[LOG] create extraction stategy for type: {config.type}",
             tag="LOG",
         )
 
