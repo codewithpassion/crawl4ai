@@ -127,6 +127,8 @@ RUN if [ "$TARGETPLATFORM" = "linux/amd64" ]; then \
     playwright install chromium; \
     elif [ "$TARGETPLATFORM" = "linux/arm64" ]; then \
     playwright install chromium; \
+    else \
+    playwright install chrome; \
     fi
 
 # Expose port
