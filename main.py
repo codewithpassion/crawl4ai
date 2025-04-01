@@ -371,6 +371,7 @@ app.add_middleware(
 # API token security
 security = HTTPBearer()
 CRAWL4AI_API_TOKEN = os.getenv("CRAWL4AI_API_TOKEN")
+MAX_CONCURRENT_TASKS = int(os.getenv("MAX_CONCURRENT_TASKS", 2))
 
 
 async def verify_token(credentials: HTTPAuthorizationCredentials = Security(security)):
@@ -393,7 +394,7 @@ if os.path.exists(__location__ + "/site"):
 
 site_templates = Jinja2Templates(directory=__location__ + "/site")
 
-crawler_service = CrawlerService(max_concurrent_tasks=2)
+crawler_service = CrawlerService(max_concurrent_tasks=MAX_CONCURRENT_TASKS)
 
 
 @app.on_event("startup")
